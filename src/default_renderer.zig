@@ -194,7 +194,7 @@ pub const Renderer = struct {
     spring_options: SpringRenderOptions,
     body_options: BodyOptions,
 
-    const RING_RES: i32 = 40;
+    const RING_RES: i32 = 20;
 
     const Self = @This();
     pub fn init(screen_size: Units.Size, default_world_width: f32) Renderer {

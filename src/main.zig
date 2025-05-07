@@ -204,7 +204,7 @@ const MouseSpring = struct {
                         .lower_lambda = -max,
                         .upper_lambda = max,
                     };
-                    _ = try fac.makeFixedAngleJoint(params, body.id, body.props.angle);
+                    // _ = try fac.makeFixedAngleJoint(params, body.id, body.props.angle);
                     _ = try fac.makeSingleLinkJoint(params, body.id, r, mouse_pos, 0.0);
                     self.active = true;
                     return;
@@ -221,8 +221,8 @@ const MouseSpring = struct {
         if (self.active and rl.isKeyReleased(.v)) {
             var item = solver.constraints.pop();
             item.?.deinit(alloc);
-            item = solver.constraints.pop();
-            item.?.deinit(alloc);
+            // item = solver.constraints.pop();
+            // item.?.deinit(alloc);
             self.active = false;
         }
     }

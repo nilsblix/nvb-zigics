@@ -88,7 +88,7 @@ pub fn setup1(solver: *Solver) !void {
     opt.vel.x = 70;
     opt.vel.y = 10;
     opt.omega = -6;
-    opt.mass_prop = .{ .mass = 100 };
+    opt.mass_prop = .{ .mass = 800 };
     opt.pos = Vector2.init(-40, 10);
     _ = try fac.makeRectangleBody(opt, .{ .width = 8.0, .height = 8.0 });
     opt.vel = .{};
@@ -99,6 +99,7 @@ pub fn setup1(solver: *Solver) !void {
         const xf = 2.0 * @as(f32, @floatFromInt(x));
         for (1..36) |y| {
             const yf = @as(f32, @floatFromInt(y));
+
             opt.pos = Vector2.init(xf, yf);
 
             if (@mod(y, 2) == 0) {
